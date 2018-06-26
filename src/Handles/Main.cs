@@ -16,7 +16,6 @@ namespace handles
             int pid = Int32.Parse(args[0]);
             using (SafeFileHandle processHandle = Native.OpenProcess(Native.PROCESS_DUP_HANDLE, false, pid))
             {
-
                 if (processHandle.IsInvalid)
                 {
                     Console.WriteLine("Could not open PID {0}! (Don't try to open a system process.)\n", pid);
